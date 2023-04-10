@@ -11,6 +11,7 @@ import MapView, { Marker } from "react-native-maps";
 import { useEffect, useState } from "react";
 import * as Location from "expo-location";
 import AudioRecorder from "./components/audio-recorder/AudioRecorder";
+import Amplitude from "./components/amplitude/Amplitude";
 export default function App() {
   const [location, setLocation] = useState({ latitude: 0, longitude: 0 });
   const [errorMsg, setErrorMsg] = useState(null);
@@ -25,9 +26,7 @@ export default function App() {
         console.log("Permission to access location was denied");
         return;
       }
-
       let locationData = await Location.getCurrentPositionAsync({});
-
       setLocation({
         latitude: locationData.coords.latitude,
         longitude: locationData.coords.longitude,
@@ -57,7 +56,7 @@ export default function App() {
         console.error("Error sending data to ThingSpeak:", error);
       });
   };
-  const startRecord = (): void => {};
+
   useEffect(() => {
     updateLocation();
   }, []);
@@ -65,7 +64,7 @@ export default function App() {
     <View style={styles.container}>
       <Header />
       {/* <ScrollView style={styles.scrollView}> */}
-      <View>
+      <View style={styles.abd}>
         <MapView
           style={styles.map}
           initialRegion={{
@@ -89,10 +88,6 @@ export default function App() {
             <Text style={styles.buttonText}>Update Location</Text>
           </TouchableOpacity>
           <AudioRecorder />
-
-          <TouchableOpacity style={styles.button} onPress={publishData}>
-            <Text style={styles.buttonText}>Publish Data</Text>
-          </TouchableOpacity>
         </View>
       </View>
       {/* </ScrollView> */}
@@ -105,6 +100,10 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 0,
     backgroundColor: "#fff",
+  },
+  abd: {
+    display: "flex",
+    // flexDirection: "column-reverse",
   },
 
   scrollView: {

@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 const Header = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.titeText}>Rasberry Pi</Text>
+      <Text style={styles.titeText}>SenseMe</Text>
     </View>
   );
 };
@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
   },
   titeText: {
     color: "#E8FCEA",
+    fontSize: 35,
   },
 });
 export default Header;
