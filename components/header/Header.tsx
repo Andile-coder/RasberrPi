@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 const Header = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.titeText}>SenseMe</Text>
+      <Text style={styles.titeText}>Enviromemnt Sensor</Text>
     </View>
   );
 };

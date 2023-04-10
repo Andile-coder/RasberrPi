@@ -83,12 +83,12 @@ const styles = StyleSheet.create({
   buttonStart: {
     marginLeft: 20,
     borderRadius: 7,
-    backgroundColor: "#2E4053",
+    backgroundColor: "blue",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     height: 50,
-    width: 120,
+    width: 250,
   },
   buttonStop: {
     marginLeft: 20,

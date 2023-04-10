@@ -116,17 +116,19 @@ const styles = StyleSheet.create({
   },
   buttons: {
     display: "flex",
-    flexDirection: "row",
+
+    flexDirection: "column",
   },
   button: {
     marginLeft: 20,
     borderRadius: 7,
-    backgroundColor: "#2E4053",
+    marginBottom: 20,
+    backgroundColor: "blue",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     height: 50,
-    width: 120,
+    width: 250,
   },
   buttonText: {
     color: "#E8FCEA",
